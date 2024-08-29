@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p>Ada perekomendasi?</p>
+        <select name="kondisi_rekomendasi" id="kondisi_rekomendasi" onchange="changeOpsi(this)">
+            <option disabled hidden selected>Pilih</option>
+            <option value="A">Ada</option>
+            <option value="T">Tidak</option>
+        </select>
+        
+        <div id="wrap">
+        <br>
+            <br>
+            <div id="nama_perekomendasi">
+                <label for="">Nama Lengkap Perekomendasi</label>
+                <br>
+                <input type="text" id="name" name="name">
+            </div>
+    
+            <p>Kategori perekomendasian</p>
+            <select name="kategori_rekomendasi" id="kategori_rekomendasi" onchange="changeKat(this)">
+                <option disabled hidden selected>Pilih</option>
+                <option value="PB">Pekerja BRI</option>
+                <option value="BK">Purnabakti</option>
+            </select>
+            <br>
+            <br>
+            <div id="nomor_id">
+                <label for="">Nomor ID Pegawai/KTA/PN/MP</label>
+                <br>
+                <input type="text" id="nomor" name="nomor">
+            </div>
+    
+            <br>
+            <div id="jabatan_perekomendasi">
+                <label for="">Jabatan Perekomendasi</label>
+                <br>
+                <input type="text" id="jabatan" name="jabatan">
+            </div>
+        </div>
+
+
+    </form>
+    <script>
+        function changeOpsi(e) {
+            let kondisiRekomendasi = document.getElementById("kondisi_rekomendasi");
+            let wrapper = document.getElementById("wrap");
+            if (e.value == "T" ){
+                wrapper.style.display = "none";
+            } else {
+                wrapper.style.display = "block";
+            }
+        }
+
+        function changeKat(e) {
+            let kategoriRekomendasi = document.getElementById("kategori_rekomendasi");
+            let jabatanPerekomendasi = document.getElementById("jabatan_perekomendasi");
+            if (e.value == "BK"){
+                jabatanPerekomendasi.style.display = "none";
+            } else {
+                jabatanPerekomendasi.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

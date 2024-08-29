@@ -1,0 +1,67 @@
+*, body, html {
+    padding: 0px;
+    margin: 0px;
+    /* background-color: rgb(166, 42, 158); */
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(212, 97, 212);
+    border-radius: 0px 0px 30px 30px; 
+    margin: 0px 60px;
+    height: 60px;
+}
+main{
+    background-color: rgb(90, 0, 90);
+    height: 75vh;
+}
+
+.logo{
+    height: 50px;
+    padding-left: 20px;
+}
+
+nav ul li{
+    display: inline;
+    padding-right: 10px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+.all{
+    background-color: rgb(90, 0, 90);
+
+}
+.all-item {
+    display: flex;
+    margin-top: 90px;
+    background-color: rgb(90, 0, 90);
+
+}
+
+.item {
+    border: 1px solid black;
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.text-description {
+    color: white;
+}
+
+button {
+    background-color:rgb(212, 97, 212);;
+}
+
+.merch1 {
+    height: 200px;
+}
+
+.merch3 {
+    height: 200px;
+}

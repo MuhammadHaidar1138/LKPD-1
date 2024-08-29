@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1">
+        <input type="date" id="search-input" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <p id="result">Tidak Mencari Data...</p>
+
+    <script>
+        document.getElementById("form1").addEventListener("submit", function (event) {event.preventDefault();
+        let inputValue = document.getElementById("search-input").value;
+        let outputData = document.getElementById("output_data")
+            if (inputValue == "") {
+                document.getElementById("result").innerHTML = "Tidak Mencari Data";
+            } else {
+                let dateObj = new Date(inputValue);
+                let options = { day: 'numeric', month: 'long', year: 'numeric' };
+                let formattedDate = dateObj.toLocaleDateString('id-ID', options);
+                document.getElementById("result").innerHTML ="Mencari data untuk tanggal " + "<span style='color:blue;'>" + formattedDate + "...";
+            }
+        });
+    </script>
+</body>
+</html>

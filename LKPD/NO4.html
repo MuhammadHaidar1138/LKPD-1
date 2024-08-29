@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <img src="" alt="" id="gambar_output" width="200px">
+        <br>
+        <label for="">Ubah : </label>
+        <select name="gambar" id="pilih_gambar">
+            <option disabled hidden selected>Pilih Gambar</option>
+            <option value="G1">Gambar 1</option>
+            <option value="G2">Gambar 2</option>
+            <option value="G3">Gambar 3</option>
+        </select>
+
+        <select name="bentuk" id="pilih_bentuk">
+            <option disabled hidden selected>Pilih Bentuk</option>
+            <option value="kotak">Kotak</option>
+            <option value="lingkaran">Lingkaran</option>
+            <option value="segitiga">Segitiga</option>
+        </select>
+
+        <select name="warna" id="warna_border">
+            <option disabled hidden selected>Pilih Warna Border</option>
+            <option value="merah">Merah</option>
+            <option value="kuning">Kuning</option>
+            <option value="hijau">Hijau</option>
+        </select>
+
+        <button type="button" onclick="output(this)">Submit</button>
+
+        <script>
+            function output(e) {
+                    let pilihGambar = document.getElementById("pilih_gambar").value;
+                    let pilihBentuk = document.getElementById("pilih_bentuk").value;
+                    let warnaBorder = document.getElementById("warna_border").value;
+                    let gambarOutput = document.getElementById("gambar_output");
+                    if (pilihGambar == "G1"){
+                        gambarOutput.src = "../image/merch1.jpg";
+                    } else if (e.value == "G2") {
+                        gambarOutput.src = "../image/merch2.jpg";
+                    } else {
+                        gambarOutput.src = "../image/merch3.jpg";
+                    }
+
+                    if(pilihBentuk == "lingkaran"){
+                        gambarOutput.style.borderRadius = "50%" ;
+                    } else if (pilihBentuk == "segitiga"){
+                        gambarOutput.style.clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)"
+                    } else {
+                        gambarOutput.style.clipPath = "none";
+                    }
+
+                    if(warnaBorder == "merah") {
+                        gambarOutput.style.border = "5px solid red";
+                    } else if (warnaBorder == "kuning") {
+                        gambarOutput.style.border = "5px solid yellow";
+                    } else {
+                        gambarOutput.style.border = "5px solid green";
+                    }
+                }
+        </script>
+    </form>
+</body>
+</html>
